@@ -1,0 +1,664 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"9 SSD.c
+[; ;SSD.c: 9: SSD_SELECT_t ssd_select = SSD_LEFT ;
+[c E870 0 1 .. ]
+[n E870 . SSD_LEFT SSD_RIGHT  ]
+"12
+[; ;SSD.c: 12: SSD_BLINK_t blink = SSD_ON ;
+[c E874 0 1 .. ]
+[n E874 . SSD_ON SSD_OFF  ]
+"1499 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1499: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
+"340
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 340: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1325
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1325: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"5 SSD.c
+[; ;SSD.c: 5: extern uint8_t measured_temp ;
+[v _measured_temp `uc ~T0 @X0 0 e ]
+"4
+[; ;SSD.c: 4: extern uint8_t set_temp ;
+[v _set_temp `uc ~T0 @X0 0 e ]
+"109
+[; ;SSD.c: 109:         }
+[c E8 0 1 .. ]
+[n E8 . NORMAL_MODE SETTING_MODE  ]
+"6
+[; ;SSD.c: 6: extern MODE_STATE_t mode ;
+[v _mode `E8 ~T0 @X0 0 e ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"218
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 218: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"280
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 280: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"342
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 342: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"404
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 404: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"436
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 436: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"456
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 456: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"534
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 534: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"596
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 596: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"636
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 636: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"643
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 643: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"650
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 650: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"657
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 657: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"732
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 732: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"739
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 739: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"810
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 810: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"817
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 817: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"887
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 887: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"894
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 894: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"901
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 901: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"908
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 908: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"966
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 966: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1061
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1061: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1068
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1068: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1075
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1075: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1082: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1089: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1096
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1096: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1154
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1154: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1161
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1161: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1257
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1257: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1327
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1327: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1377
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1377: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1439
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1439: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1501
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1501: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1563
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1563: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1620
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1620: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1682
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1682: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1722
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1722: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1756
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1756: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"1818
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1818: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"1825
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1825: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"1832
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 1832: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2001
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2001: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2082
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2082: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2089
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2089: __asm("CMCON equ 09Ch");
+[; <" CMCON equ 09Ch ;# ">
+"2159
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2159: __asm("CVRCON equ 09Dh");
+[; <" CVRCON equ 09Dh ;# ">
+"2224
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2224: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2231
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2231: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"2290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2290: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"2297
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2297: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"2304
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2304: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"2311
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2311: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"2318
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2318: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"2363
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"8 SSD.c
+[; ;SSD.c: 8: uint8_t tens , ones ;
+[v _tens `uc ~T0 @X0 1 e ]
+[v _ones `uc ~T0 @X0 1 e ]
+"9
+[; ;SSD.c: 9: SSD_SELECT_t ssd_select = SSD_LEFT ;
+[v _ssd_select `E870 ~T0 @X0 1 e ]
+[i _ssd_select
+. `E870 0
+]
+"10
+[; ;SSD.c: 10: uint8_t temp ;
+[v _temp `uc ~T0 @X0 1 e ]
+"12
+[; ;SSD.c: 12: SSD_BLINK_t blink = SSD_ON ;
+[v _blink `E874 ~T0 @X0 1 e ]
+[i _blink
+. `E874 0
+]
+"20
+[; ;SSD.c: 20: void ssd_init(void){
+[v _ssd_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _ssd_init ]
+[f ]
+"22
+[; ;SSD.c: 22:      (TRISD &= ~(255 << 0));
+[e =& _TRISD -> ~ << -> 255 `i -> 0 `i `Vuc ]
+"23
+[; ;SSD.c: 23:      (PORTD &= ~(255 << 0));
+[e =& _PORTD -> ~ << -> 255 `i -> 0 `i `Vuc ]
+"25
+[; ;SSD.c: 25:      (TRISA &= ~(1 << 4));
+[e =& _TRISA -> ~ << -> 1 `i -> 4 `i `Vuc ]
+"26
+[; ;SSD.c: 26:      (PORTA &= ~(1 << 4));
+[e =& _PORTA -> ~ << -> 1 `i -> 4 `i `Vuc ]
+"27
+[; ;SSD.c: 27:      (TRISA &= ~(1 << 5));
+[e =& _TRISA -> ~ << -> 1 `i -> 5 `i `Vuc ]
+"28
+[; ;SSD.c: 28:      (PORTA &= ~(1 << 5));
+[e =& _PORTA -> ~ << -> 1 `i -> 5 `i `Vuc ]
+"29
+[; ;SSD.c: 29: }
+[e :UE 95 ]
+}
+"36
+[; ;SSD.c: 36: uint8_t display7s(uint8_t v)
+[v _display7s `(uc ~T0 @X0 1 ef1`uc ]
+"37
+[; ;SSD.c: 37: {
+{
+[e :U _display7s ]
+"36
+[; ;SSD.c: 36: uint8_t display7s(uint8_t v)
+[v _v `uc ~T0 @X0 1 r1 ]
+"37
+[; ;SSD.c: 37: {
+[f ]
+"38
+[; ;SSD.c: 38:   switch(v)
+[e $U 98  ]
+"39
+[; ;SSD.c: 39:   {
+{
+"40
+[; ;SSD.c: 40:     case 0:
+[e :U 99 ]
+"41
+[; ;SSD.c: 41:       return 0x3F;
+[e ) -> -> 63 `i `uc ]
+[e $UE 96  ]
+"42
+[; ;SSD.c: 42:       break;
+[e $U 97  ]
+"43
+[; ;SSD.c: 43:     case 1:
+[e :U 100 ]
+"44
+[; ;SSD.c: 44:       return 0x06;
+[e ) -> -> 6 `i `uc ]
+[e $UE 96  ]
+"45
+[; ;SSD.c: 45:       break;
+[e $U 97  ]
+"46
+[; ;SSD.c: 46:     case 2:
+[e :U 101 ]
+"47
+[; ;SSD.c: 47:       return 0x5B;
+[e ) -> -> 91 `i `uc ]
+[e $UE 96  ]
+"48
+[; ;SSD.c: 48:       break;
+[e $U 97  ]
+"49
+[; ;SSD.c: 49:     case 3:
+[e :U 102 ]
+"50
+[; ;SSD.c: 50:       return 0x4F;
+[e ) -> -> 79 `i `uc ]
+[e $UE 96  ]
+"51
+[; ;SSD.c: 51:       break;
+[e $U 97  ]
+"52
+[; ;SSD.c: 52:     case 4:
+[e :U 103 ]
+"53
+[; ;SSD.c: 53:       return 0x66;
+[e ) -> -> 102 `i `uc ]
+[e $UE 96  ]
+"54
+[; ;SSD.c: 54:       break;
+[e $U 97  ]
+"55
+[; ;SSD.c: 55:     case 5:
+[e :U 104 ]
+"56
+[; ;SSD.c: 56:       return 0x6D;
+[e ) -> -> 109 `i `uc ]
+[e $UE 96  ]
+"57
+[; ;SSD.c: 57:       break;
+[e $U 97  ]
+"58
+[; ;SSD.c: 58:     case 6:
+[e :U 105 ]
+"59
+[; ;SSD.c: 59:       return 0x7D;
+[e ) -> -> 125 `i `uc ]
+[e $UE 96  ]
+"60
+[; ;SSD.c: 60:       break;
+[e $U 97  ]
+"61
+[; ;SSD.c: 61:     case 7:
+[e :U 106 ]
+"62
+[; ;SSD.c: 62:       return 0x07;
+[e ) -> -> 7 `i `uc ]
+[e $UE 96  ]
+"63
+[; ;SSD.c: 63:       break;
+[e $U 97  ]
+"64
+[; ;SSD.c: 64:     case 8:
+[e :U 107 ]
+"65
+[; ;SSD.c: 65:       return 0x7F;
+[e ) -> -> 127 `i `uc ]
+[e $UE 96  ]
+"66
+[; ;SSD.c: 66:       break;
+[e $U 97  ]
+"67
+[; ;SSD.c: 67:     case 9:
+[e :U 108 ]
+"68
+[; ;SSD.c: 68:       return 0x6F;
+[e ) -> -> 111 `i `uc ]
+[e $UE 96  ]
+"69
+[; ;SSD.c: 69:       break;
+[e $U 97  ]
+"70
+[; ;SSD.c: 70:     case 10:
+[e :U 109 ]
+"71
+[; ;SSD.c: 71:       return 0x77;
+[e ) -> -> 119 `i `uc ]
+[e $UE 96  ]
+"72
+[; ;SSD.c: 72:       break;
+[e $U 97  ]
+"73
+[; ;SSD.c: 73:     case 11:
+[e :U 110 ]
+"74
+[; ;SSD.c: 74:       return 0x7c;
+[e ) -> -> 124 `i `uc ]
+[e $UE 96  ]
+"75
+[; ;SSD.c: 75:       break;
+[e $U 97  ]
+"76
+[; ;SSD.c: 76:     case 12:
+[e :U 111 ]
+"77
+[; ;SSD.c: 77:       return 0x58;
+[e ) -> -> 88 `i `uc ]
+[e $UE 96  ]
+"78
+[; ;SSD.c: 78:       break;
+[e $U 97  ]
+"79
+[; ;SSD.c: 79:     case 13:
+[e :U 112 ]
+"80
+[; ;SSD.c: 80:       return 0x5E;
+[e ) -> -> 94 `i `uc ]
+[e $UE 96  ]
+"81
+[; ;SSD.c: 81:       break;
+[e $U 97  ]
+"82
+[; ;SSD.c: 82:     case 14:
+[e :U 113 ]
+"83
+[; ;SSD.c: 83:       return 0x79;
+[e ) -> -> 121 `i `uc ]
+[e $UE 96  ]
+"84
+[; ;SSD.c: 84:       break;
+[e $U 97  ]
+"85
+[; ;SSD.c: 85:     case 15:
+[e :U 114 ]
+"86
+[; ;SSD.c: 86:       return 0x71;
+[e ) -> -> 113 `i `uc ]
+[e $UE 96  ]
+"87
+[; ;SSD.c: 87:       break;
+[e $U 97  ]
+"88
+[; ;SSD.c: 88:     default:
+[e :U 115 ]
+"89
+[; ;SSD.c: 89:       return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 96  ]
+"90
+[; ;SSD.c: 90:       break;
+[e $U 97  ]
+"91
+[; ;SSD.c: 91:   }
+}
+[e $U 97  ]
+[e :U 98 ]
+[e [\ -> _v `i , $ -> 0 `i 99
+ , $ -> 1 `i 100
+ , $ -> 2 `i 101
+ , $ -> 3 `i 102
+ , $ -> 4 `i 103
+ , $ -> 5 `i 104
+ , $ -> 6 `i 105
+ , $ -> 7 `i 106
+ , $ -> 8 `i 107
+ , $ -> 9 `i 108
+ , $ -> 10 `i 109
+ , $ -> 11 `i 110
+ , $ -> 12 `i 111
+ , $ -> 13 `i 112
+ , $ -> 14 `i 113
+ , $ -> 15 `i 114
+ 115 ]
+[e :U 97 ]
+"93
+[; ;SSD.c: 93: }
+[e :UE 96 ]
+}
+"100
+[; ;SSD.c: 100: void ssd_update(void){
+[v _ssd_update `(v ~T0 @X0 1 ef ]
+{
+[e :U _ssd_update ]
+[f ]
+"101
+[; ;SSD.c: 101:     if (blink == SSD_ON){
+[e $ ! == -> _blink `ui -> . `E874 0 `ui 117  ]
+{
+"102
+[; ;SSD.c: 102:         switch (mode){
+[e $U 119  ]
+{
+"103
+[; ;SSD.c: 103:             case NORMAL_MODE :
+[e :U 120 ]
+"104
+[; ;SSD.c: 104:                 temp = measured_temp ;
+[e = _temp _measured_temp ]
+"105
+[; ;SSD.c: 105:                 break ;
+[e $U 118  ]
+"106
+[; ;SSD.c: 106:             case SETTING_MODE :
+[e :U 121 ]
+"107
+[; ;SSD.c: 107:                 temp = set_temp;
+[e = _temp _set_temp ]
+"108
+[; ;SSD.c: 108:                 break ;
+[e $U 118  ]
+"109
+[; ;SSD.c: 109:         }
+}
+[e $U 118  ]
+[e :U 119 ]
+[e [\ -> _mode `ui , $ -> . `E8 0 `ui 120
+ , $ -> . `E8 1 `ui 121
+ 118 ]
+[e :U 118 ]
+"111
+[; ;SSD.c: 111:         switch (ssd_select){
+[e $U 123  ]
+{
+"112
+[; ;SSD.c: 112:             case SSD_LEFT :
+[e :U 124 ]
+"113
+[; ;SSD.c: 113:                 tens = temp / 10 ;
+[e = _tens -> / -> _temp `i -> 10 `i `uc ]
+"114
+[; ;SSD.c: 114:                 (PORTA |= (1 << 4));
+[e =| _PORTA -> << -> 1 `i -> 4 `i `Vuc ]
+"115
+[; ;SSD.c: 115:                 (PORTA &= ~(1 << 5));
+[e =& _PORTA -> ~ << -> 1 `i -> 5 `i `Vuc ]
+"116
+[; ;SSD.c: 116:                 PORTD = display7s(tens);
+[e = _PORTD ( _display7s (1 _tens ]
+"117
+[; ;SSD.c: 117:                 ssd_select = SSD_RIGHT ;
+[e = _ssd_select . `E870 1 ]
+"118
+[; ;SSD.c: 118:                 break ;
+[e $U 122  ]
+"119
+[; ;SSD.c: 119:             case SSD_RIGHT :
+[e :U 125 ]
+"120
+[; ;SSD.c: 120:                  ones = temp % 10 ;
+[e = _ones -> % -> _temp `i -> 10 `i `uc ]
+"121
+[; ;SSD.c: 121:                  (PORTA |= (1 << 5));
+[e =| _PORTA -> << -> 1 `i -> 5 `i `Vuc ]
+"122
+[; ;SSD.c: 122:                  (PORTA &= ~(1 << 4));
+[e =& _PORTA -> ~ << -> 1 `i -> 4 `i `Vuc ]
+"123
+[; ;SSD.c: 123:                  PORTD = display7s(ones);
+[e = _PORTD ( _display7s (1 _ones ]
+"124
+[; ;SSD.c: 124:                  ssd_select = SSD_LEFT ;
+[e = _ssd_select . `E870 0 ]
+"125
+[; ;SSD.c: 125:                  break;
+[e $U 122  ]
+"126
+[; ;SSD.c: 126:             default :
+[e :U 126 ]
+"128
+[; ;SSD.c: 128:                 break ;
+[e $U 122  ]
+"129
+[; ;SSD.c: 129:         }
+}
+[e $U 122  ]
+[e :U 123 ]
+[e [\ -> _ssd_select `ui , $ -> . `E870 0 `ui 124
+ , $ -> . `E870 1 `ui 125
+ 126 ]
+[e :U 122 ]
+"130
+[; ;SSD.c: 130:     }
+}
+[e :U 117 ]
+"131
+[; ;SSD.c: 131: }
+[e :UE 116 ]
+}
+"138
+[; ;SSD.c: 138: void ssd_turn_off(void){
+[v _ssd_turn_off `(v ~T0 @X0 1 ef ]
+{
+[e :U _ssd_turn_off ]
+[f ]
+"139
+[; ;SSD.c: 139:     (PORTD &= ~(255 << 0));
+[e =& _PORTD -> ~ << -> 255 `i -> 0 `i `Vuc ]
+"140
+[; ;SSD.c: 140:     (PORTA &= ~(1 << 4));
+[e =& _PORTA -> ~ << -> 1 `i -> 4 `i `Vuc ]
+"141
+[; ;SSD.c: 141:     (PORTA &= ~(1 << 5));
+[e =& _PORTA -> ~ << -> 1 `i -> 5 `i `Vuc ]
+"143
+[; ;SSD.c: 143: }
+[e :UE 127 ]
+}
+"150
+[; ;SSD.c: 150: void ssd_blink(void){
+[v _ssd_blink `(v ~T0 @X0 1 ef ]
+{
+[e :U _ssd_blink ]
+[f ]
+"151
+[; ;SSD.c: 151:     if (mode == SETTING_MODE){
+[e $ ! == -> _mode `ui -> . `E8 1 `ui 129  ]
+{
+"153
+[; ;SSD.c: 153:         switch (blink){
+[e $U 131  ]
+{
+"155
+[; ;SSD.c: 155:            case SSD_ON :
+[e :U 132 ]
+"156
+[; ;SSD.c: 156:                blink = SSD_OFF ;
+[e = _blink . `E874 1 ]
+"157
+[; ;SSD.c: 157:                ssd_turn_off();
+[e ( _ssd_turn_off ..  ]
+"158
+[; ;SSD.c: 158:                break ;
+[e $U 130  ]
+"160
+[; ;SSD.c: 160:            case SSD_OFF :
+[e :U 133 ]
+"161
+[; ;SSD.c: 161:                blink = SSD_ON ;
+[e = _blink . `E874 0 ]
+"162
+[; ;SSD.c: 162:                break;
+[e $U 130  ]
+"163
+[; ;SSD.c: 163:            default :
+[e :U 134 ]
+"165
+[; ;SSD.c: 165:                break ;
+[e $U 130  ]
+"166
+[; ;SSD.c: 166:         }
+}
+[e $U 130  ]
+[e :U 131 ]
+[e [\ -> _blink `ui , $ -> . `E874 0 `ui 132
+ , $ -> . `E874 1 `ui 133
+ 134 ]
+[e :U 130 ]
+"167
+[; ;SSD.c: 167:     }
+}
+[e :U 129 ]
+"168
+[; ;SSD.c: 168: }
+[e :UE 128 ]
+}
