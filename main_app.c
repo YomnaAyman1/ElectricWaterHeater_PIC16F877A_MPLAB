@@ -1,9 +1,8 @@
 /*
  * File      : main_app.c
- * Author    : Abdelrhman Mosad Abdelhady
+ * Author    : Yomna Ayman Abd El Fatah
  * Project   : Electric water heater
  * simulator : picsimlab - > https://sourceforge.net/projects/picsim/  
- * Created on July 6, 2020, 10:12 PM
  */
 // CONFIG
 #pragma config FOSC   = EXTRC     // Oscillator Selection bits (RC oscillator)
